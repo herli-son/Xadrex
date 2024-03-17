@@ -1,0 +1,221 @@
+<mxfile host="app.diagrams.net" modified="2024-03-17T15:44:32.219Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="uAZFy-SGQM-2rgxBahCO" version="24.0.7" type="device">
+  <diagram name="Página-1" id="HEw_7R2QyH2AdsNqoVbW">
+    <mxGraphModel dx="1687" dy="918" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-1" value="&lt;h1 style=&quot;text-align: justify; margin-top: 0px;&quot;&gt;Sistema de&amp;nbsp; Jogos de Xadrez&lt;/h1&gt;&lt;div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;O sistema possibilitará jogar jogos de xadrez online.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;A ideia é que os jogadores cadastrados possam desafiar outros jogadores para uma partida, criando assim um tabuleiro para jogar.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;O jogo em questão poderá ser salvo em seu estado atual no banco de dados e, para os jogadores observarem as jogadas feitas, é ideal ocorrer uma verificação constante no banco, de preferência a cada segundo.&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Tendo isso em mente, serão necessários os seguintes objetos gerais para o desenvolvimento do sistema:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Jogador;&lt;/li&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Tabuleiro;&amp;nbsp;&lt;/li&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Peças.&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;O tabuleiro é composto por casas, sendo essas casas tendo uma posição de linha e de coluna, além de uma cor. E ela também precisará saber qual a peça está ocupando-a, se está ocupada, e quais as possíveis peças que podem ocupá-la. Assim, &#39;Casa&#39; pode ser considerada um objeto a ser analisado.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;O tabuleiro é composto por 64 casas e suas linhas e colunas variam de &#39;A&#39; a &#39;H&#39; e 1 a 8.&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;Cada tabuleiro tem somente 2 jogadores e 32 peças diferentes, sendo elas 16 brancas e 16 pretas. O jogador desafiante sempre será o jogador 1 e controlará as peças brancas.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;As peças precisam saber quais casas elas ocupam, quais posições elas poderão ocupar, se estão ameaçadas de captura e qual a sua cor. Além disso, algumas peças possuem movimentos especiais dependendo se já foram movidas ou não, como ocorre com a torre, do rei e do peão, e, tendo isso em mente, pode-se criar uma propriedade que define se a peça pode ou não realizar o movimento especial.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;Existem peças diferentes no xadrez e cada uma realiza movimentos diferentes. Sabendo disso, cada peça terá sua própria classe que será filha da classe peça, assim será possível que cada peça possa calcular seu próprio movimento.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;Os jogadores movimentam as peças que eles controlam, passando a peça que querem movimentar e a posição nova que a peça ocupará. Assim, será necessário, na peça, um método para sua movimentação.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1160" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-2" value="Tabuleiro" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-69" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-2">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-70" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-69">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-65" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-2">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-66" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-65">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-6" value="Jogador" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="480" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-71" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-6">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-72" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-71">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-73" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-6">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-74" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-73">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-8" value="Peça" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="480" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-75" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-8">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-76" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-75">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-77" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-8">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-78" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-77">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-24" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlonBsh9_OxFFWAn-YS3-10" target="XlonBsh9_OxFFWAn-YS3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-10" value="Peão" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="760" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-87" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-10">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-88" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-87">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-89" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-10">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-90" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-89">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-25" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlonBsh9_OxFFWAn-YS3-12" target="XlonBsh9_OxFFWAn-YS3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-12" value="Torre" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="760" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-91" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-12">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-92" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-91">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-93" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-12">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-94" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-93">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-26" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlonBsh9_OxFFWAn-YS3-14" target="XlonBsh9_OxFFWAn-YS3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-14" value="Cavalo" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="760" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-95" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-14">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-96" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-95">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-97" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-14">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-98" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-97">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-23" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlonBsh9_OxFFWAn-YS3-16" target="XlonBsh9_OxFFWAn-YS3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-16" value="Bispo" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="760" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-83" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-16">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-84" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-83">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-85" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-16">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-86" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-85">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-28" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlonBsh9_OxFFWAn-YS3-18" target="XlonBsh9_OxFFWAn-YS3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-18" value="Rainha" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="760" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-103" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-18">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-104" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-103">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-105" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-18">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-106" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-105">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-27" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlonBsh9_OxFFWAn-YS3-20" target="XlonBsh9_OxFFWAn-YS3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-20" value="Rei" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="760" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-99" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-20">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-100" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-99">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-101" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-20">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-102" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-101">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-29" value="Casa" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="480" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-79" value="Atributos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-29">
+          <mxGeometry y="30" width="160" height="30" as="geometry">
+            <mxRectangle y="30" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-80" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-79">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-81" value="Métodos" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="XlonBsh9_OxFFWAn-YS3-29">
+          <mxGeometry y="60" width="160" height="30" as="geometry">
+            <mxRectangle y="60" width="160" height="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlonBsh9_OxFFWAn-YS3-82" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="XlonBsh9_OxFFWAn-YS3-81">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
